@@ -1,5 +1,12 @@
 # Getting Started with Docker
 
+### Host Networking in Docker for Mac and Windows
+
+- https://docs.docker.com/network/host/
+
+>The host networking driver only works on Linux hosts, and is not supported on Docker Desktop for Mac, Docker Desktop for Windows, or Docker EE for Windows Server.
+
+
 ## Commands
 
 ```
@@ -74,6 +81,10 @@ Configuration
 - MYSQL_USER=todos-user 
 - MYSQL_PASSWORD=dummytodos 
 - MYSQL_DATABASE=todos
+
+```
+docker run --detach --env MYSQL_ROOT_PASSWORD=dummypassword --env MYSQL_DATABASE=todos --env MYSQL_USER=todos-user --env MYSQL_PASSWORD=dummytodos --publish 3306:3306 mysql:5.7
+```
 
 ### Docker Compose Example
 
@@ -162,12 +173,6 @@ docker container run -p 8080:8080 --link=mysql -e RDS_HOSTNAME=mysql  in28min/to
 docker network ls
 docker inspect bridge #after running mysql and web app
 docker inspect host (--network=host) Works in Unix - Not supported in Docker Deskop. Host is Virtual Machines.
-
-### Host Networking in Docker for Mac
-
-- https://docs.docker.com/network/host/
-
->The host networking driver only works on Linux hosts, and is not supported on Docker Desktop for Mac, Docker Desktop for Windows, or Docker EE for Windows Server.
 
 docker network ls
 docker network create web-application-mysql-network
