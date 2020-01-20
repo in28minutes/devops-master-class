@@ -67,6 +67,14 @@ Environment Variables:
 - RDS_USERNAME: todos-user
 - RDS_PASSWORD: dummytodos
 
+#### MySQL
+
+Configuration
+- MYSQL_ROOT_PASSWORD=dummypassword 
+- MYSQL_USER=todos-user 
+- MYSQL_PASSWORD=dummytodos 
+- MYSQL_DATABASE=todos
+
 ### Docker Compose Example
 
 ```
