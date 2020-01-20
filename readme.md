@@ -17,3 +17,29 @@
 - Do atleast 3 Youtube live sessions
 - After a Month
   - UFB and Packt
+
+## Diagrams
+
+```
+graph architecture {
+
+node[style=filled,color="#59C8DE"]
+//node [style=filled,color="#D14D28", fontcolor=white];
+rankdir = TB
+node[shape=record, width=2]
+Level1[shape=record, width=7.0, style=filled,color="#D14D28", fontcolor=white]
+edge [width=0]
+graph [pad=".75", ranksep="0.05", nodesep="0.25"];
+Block1,Block2,Block3[height=2]
+
+Block1 -- Level1 [style=invis]
+Block2 -- Level1 [style=invis]
+Block3 -- Level1 [style=invis]
+
+Level1[label=<Docker>]
+Block1[label=<Standaridized <BR/> Application Packaging <BR/><BR/> <FONT POINT-SIZE="10">Same packaging for <BR/>all types of applications <BR/><BR/> - Java, Python or JS</FONT>>]
+Block2[label=<Multi  <BR/> Platform Support <BR/><BR/> <FONT POINT-SIZE="10">Local Machine <BR/> Data Center <BR/> Cloud - AWS, Azure and GCP</FONT>>]
+Block3[label=<Isolation <BR/><BR/><BR/><FONT POINT-SIZE="10"> Containers have isolation <BR/> from one another</FONT>>]
+
+}
+```
