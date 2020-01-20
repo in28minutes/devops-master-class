@@ -82,8 +82,34 @@ Configuration
 - MYSQL_PASSWORD=dummytodos 
 - MYSQL_DATABASE=todos
 
+##### Link
+
 ```
-docker run --detach --env MYSQL_ROOT_PASSWORD=dummypassword --env MYSQL_DATABASE=todos --env MYSQL_USER=todos-user --env MYSQL_PASSWORD=dummytodos --publish 3306:3306 mysql:5.7
+docker run --detach --env MYSQL_ROOT_PASSWORD=dummypassword --env MYSQL_DATABASE=todos --env MYSQL_USER=todos-user --env MYSQL_PASSWORD=dummytodos --publish 3306:3306 --name mysql mysql:5.7
+
+docker run --env RDS_HOSTNAME=mysql --env RDS_PORT=3306 --env RDS_DB_NAME=todos --env RDS_USERNAME=todos-user --env RDS_PASSWORD=dummytodos --link mysql --publish 8080:8080 in28min/todo-web-application-mysql:0.0.1-SNAPSHOT
+```
+
+##### Custom Network
+
+```
+docker network create web-application-mysql-network
+
+docker run --detach --env MYSQL_ROOT_PASSWORD=dummypassword --env MYSQL_DATABASE=todos --env MYSQL_USER=todos-user --env MYSQL_PASSWORD=dummytodos --publish 3306:3306 --name mysql --network web-application-mysql-network mysql:5.7
+
+docker run --env RDS_HOSTNAME=mysql --env RDS_PORT=3306 --env RDS_DB_NAME=todos --env RDS_USERNAME=todos-user --env RDS_PASSWORD=dummytodos --network web-application-mysql-network --publish 8080:8080 --detach in28min/todo-web-application-mysql:0.0.1-SNAPSHOT
+
+```
+
+##### Volume
+
+```
+docker volume create mysql-database-volume
+
+docker run --detach --env MYSQL_ROOT_PASSWORD=dummypassword --env MYSQL_DATABASE=todos --env MYSQL_USER=todos-user --env MYSQL_PASSWORD=dummytodos --publish 3306:3306 --name mysql --network web-application-mysql-network --volume mysql-datbase-volume:/var/lib/mysql mysql:5.7
+
+
+docker run --env RDS_HOSTNAME=mysql --env RDS_PORT=3306 --env RDS_DB_NAME=todos --env RDS_USERNAME=todos-user --env RDS_PASSWORD=dummytodos --network web-application-mysql-network --publish 8080:8080 --detach in28min/todo-web-application-mysql:0.0.1-SNAPSHOT
 ```
 
 ### Docker Compose Example
