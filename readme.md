@@ -7,6 +7,20 @@
 ## Next Steps
 
 ## Todo
+- COURSE - ADD ALL THE COMMANDS
+- Using Dockerfile
+- Understanding Docker Image Layers, Caching and Dockerfile
+docker-compose up
+docker-compose up -d
+docker-compose scale currency-conversion-service=2
+docker-compose logs
+docker-compose logs -f
+```
+docker inspect in28min/hello-world-rest-api:dockerfile1
+docker history in28min/hello-world-rest-api:dockerfile1
+docker build -t in28min/hello-world-rest-api:dockerfile1 .
+```
+- Caching of Docker Images - Improve Caching and Being able to run it anywhere!
 - Course Promotion Emails/Posts
   - 2 Emails on Udemy
   - 2 Emails to Email List

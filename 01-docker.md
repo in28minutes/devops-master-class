@@ -82,6 +82,16 @@ Configuration
 - MYSQL_PASSWORD=dummytodos 
 - MYSQL_DATABASE=todos
 
+##### MySQLSh
+```
+mysqlsh
+\connect todos-user@localhost:3306
+\sql
+use todos
+select * from todo;
+
+```
+
 ##### Link
 
 ```
@@ -164,59 +174,4 @@ volumes:
 
 networks:
   todo-web-application-network:
-```
-
-## Next Steps
-
-
-In this section of the course, we will look at Docker from the perspective of an Operations team 
-- Using Dockerfile
-- Understanding Docker Image Layers, Caching and Dockerfile
-```
-docker inspect in28min/hello-world-rest-api:dockerfile1
-docker history in28min/hello-world-rest-api:dockerfile1
-docker build -t in28min/hello-world-rest-api:dockerfile1 .
-```
-- Caching of Docker Images - Improve Caching and Being able to run it anywhere!
-
-- Mysql
-
-```
-docker run mysql:5.7
-docker run --detach --env MYSQL_ROOT_PASSWORD=dummypassword --env MYSQL_USER=todos-user --env MYSQL_PASSWORD=dummytodos --env MYSQL_DATABASE=todos --name mysql --publish 3306:3306 mysql:5.7
-mysqlsh
-\connect todos-user@localhost:3306
-\sql
-use todos
-select * from todo;
-
-docker run in28min/todo-web-application-mysql:0.0.1-SNAPSHOT
-
-docker container run -p 8080:8080 --link=mysql -e RDS_HOSTNAME=mysql  in28min/todo-web-application-mysql:0.0.1-SNAPSHOT
-
-
-
-docker network ls
-docker inspect bridge #after running mysql and web app
-docker inspect host (--network=host) Works in Unix - Not supported in Docker Deskop. Host is Virtual Machines.
-
-docker network ls
-docker network create web-application-mysql-network
-docker inspect web-application-mysql-network
-
-docker container run -p 8080:8080 --network=web-application-mysql-network -e RDS_HOSTNAME=mysql  in28min/todo-web-application-mysql:0.0.1-SNAPSHOT
-
-docker run --detach --env MYSQL_ROOT_PASSWORD=dummypassword --env MYSQL_USER=todos-user --env MYSQL_PASSWORD=dummytodos --env MYSQL_DATABASE=todos --name mysql --publish 3306:3306 --network=web-application-mysql-network mysql:5.7
-
-docker container prune
-
-docker run --detach --env MYSQL_ROOT_PASSWORD=dummypassword --env MYSQL_USER=todos-user --env MYSQL_PASSWORD=dummytodos --env MYSQL_DATABASE=todos --name mysql --publish 3306:3306 --network=web-application-mysql-network --volume mysql-database-volume:/var/lib/mysql  mysql:5.7
-
-
-docker-compose up
-docker-compose up -d
-docker-compose scale currency-conversion-service=2
-docker-compose logs
-docker-compose logs -f
-
 ```
