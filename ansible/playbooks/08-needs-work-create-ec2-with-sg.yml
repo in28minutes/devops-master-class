@@ -1,0 +1,46 @@
+# TODO MORE WORK
+---
+- name: EC2 Launcher
+  hosts: localhost
+  gather_facts: True
+  vars:
+    region: "us-east-1"
+    ami_image: "ami-062f7200baf2fa504"
+    subnet: "subnet-3ebdf810"
+  tasks:
+    - ec2_group:
+        name: ansible_webserver_sg
+        region: "{{ region }}"
+        vpc_id: vpc-a6ed67dc
+        rules:
+          - proto: tcp
+            from_port: 80
+            to_port: 80
+            cidr_ip: 0.0.0.0/0
+          - proto: tcp
+            from_port: 22
+            to_port: 22
+            cidr_ip: 0.0.0.0/0
+          - proto: tcp
+            from_port: 443
+            to_port: 443
+            cidr_ip: 0.0.0.0/0
+            group_name: ansible
+        rules_egress:
+          - proto: all
+            cidr_ip: 0.0.0.0/0
+      register: firewall
+    - ec2:
+        key_name: default-ec2
+        instance_type: t2.micro
+        image: "{{ ami_image }}"
+        region: "{{ region }}"
+        count: 1
+        vpc_subnet_id: "{{ subnet }}"
+        group_id: "{{ firewall.group_id }}"
+        assign_public_ip: yes
+        wait: yes
+#fatal: [localhost]: FAILED! => {"changed": false, "msg": "boto required for this module"}
+#sudo /usr/bin/python -m easy_install pip
+#sudo /usr/bin/python -m pip install boto
+#sudo /usr/bin/python -m pip install botocore

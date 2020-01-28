@@ -1,0 +1,29 @@
+---
+- name: EC2 Launcher
+  hosts: local
+  gather_facts: True
+  vars:
+    region: "us-east-1"
+    ami_image: "ami-062f7200baf2fa504"
+    subnet: "subnet-3ebdf810"
+    security_groups: ["http_servers_sg"]
+    ec2_tags: {type: http, env: production}
+  tasks:
+    - ec2:
+        key_name: default-ec2
+        instance_type: t2.micro
+        image: "{{ ami_image }}"
+        region: "{{ region }}"
+        count: 1
+        vpc_subnet_id: "{{ subnet }}"
+        assign_public_ip: yes
+        group: "{{ security_groups }}"
+        instance_tags: "{{ ec2_tags }}"
+        #exact_count: 0
+        #Play with exact count increase to 1, 2, 3
+        #count_tag: {type: http}
+        wait: yes
+      register: ec2
+    - name: Add all instance public IPs to host group
+      add_host: hostname={{ item.public_ip }} groups=dev
+      loop: "{{ ec2.instances }}"

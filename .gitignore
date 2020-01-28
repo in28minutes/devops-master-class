@@ -8,6 +8,11 @@
 # dependencies
 node_modules
 
+# terraform excludes
+*.tfstate
+*.tfstate.backup
+.terraform
+
 # IDEs and editors
 /.idea
 .project

@@ -1,0 +1,8 @@
+apiVersion: v1
+data:
+  YOUR_PROPERTY: value
+  YOUR_PROPERTY_2: value2
+kind: ConfigMap
+metadata:
+  name: currency-conversion
+  namespace: default

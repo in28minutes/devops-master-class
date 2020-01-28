@@ -1,0 +1,6 @@
+# COMMENT
+---
+  - hosts: all
+    tasks:
+      - name: Ping All Servers
+        action: ping

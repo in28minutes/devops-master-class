@@ -1,0 +1,24 @@
+#groups
+[local]
+control ansible_connection=local
+
+[in28minutes]
+server1 ansible_host=3.82.128.48
+server2 ansible_host=3.227.233.134
+
+[dev]
+#54.172.74.104
+server1
+#34.226.123.23
+
+[qa]
+server2
+#34.231.110.243
+
+#[groupofgroups:children]
+#dev
+#qa
+
+#[numberedhosts]
+#dev
+#dev[1:5].in28minutes.com

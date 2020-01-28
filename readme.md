@@ -2,7 +2,9 @@
 
 ## Learn Devops with Docker, Kubernetes, Terraform, Ansible, Jenkins and Azure Devops
 
-## 
+# Installing Tools
+
+- Visual Studio Code - https://www.youtube.com/watch?v=mBohIID3AyE
 
 ## Next Steps
 
@@ -53,7 +55,7 @@ Block3 -- Level1 [style=invis]
 Level1[label=<Docker>]
 Block1[label=<Standaridized <BR/> Application Packaging <BR/><BR/> <FONT POINT-SIZE="10">Same packaging for <BR/>all types of applications <BR/><BR/> - Java, Python or JS</FONT>>]
 Block2[label=<Multi  <BR/> Platform Support <BR/><BR/> <FONT POINT-SIZE="10">Local Machine <BR/> Data Center <BR/> Cloud - AWS, Azure and GCP</FONT>>]
-Block3[label=<Isolation <BR/><BR/><BR/><FONT POINT-SIZE="10"> Containers have isolation <BR/> from one another</FONT>>]
+Block3[label=<Light-Weight <BR/>&amp; Isolation <BR/><BR/><FONT POINT-SIZE="10"> Containers are <BR/>Light-weight compared to VM's <BR/>Isolated from one another</FONT>>]
 
 }
 ```
