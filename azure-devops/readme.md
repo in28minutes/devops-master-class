@@ -2,7 +2,8 @@
 
 ## Azure Marketplace
 
-- Terraform (https://marketplace.visualstudio.com/items?itemName=ms-devlabs.custom-terraform-tasks)
+- Terraform 1 (https://marketplace.visualstudio.com/items?itemName=ms-devlabs.custom-terraform-tasks)
+- Terraform 2 (https://marketplace.visualstudio.com/items?itemName=charleszipp.azure-pipelines-tasks-terraform)
 - Aws (https://marketplace.visualstudio.com/items?itemName=AmazonWebServices.aws-vsts-tools)
 
 ## Azure Kubernetes Cluster
