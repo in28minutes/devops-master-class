@@ -1,1 +1,0 @@
-some_configurable_value = "dev"

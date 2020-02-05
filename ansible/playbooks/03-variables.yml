@@ -1,55 +1,9 @@
 ---
-  - hosts: all
-    vars_files: 
-      - variables.yml
-    vars: 
-      variable1: "PlayBookValue"
-# ansible-playbook 01-basics/03-variables.yml -e variable1=CommandLineValue
-# Precedence - Command Line > Variable Files > Play Variables
-    tasks:
-      - name: Variable Value
-        debug: msg="Value is {{ variable1 }}"
-      - name: Variable Value using var
-        debug: var=variable1
-      - name : Capture Value into Output Variable
-        command: whoami
-        register: response
-      - name: Full Response
-        debug: msg="Total Return Value is {{ response }}"
-      - name: Filter User Name
-        debug: msg="User Name is {{ response.stdout }}"
-# FACTS
-# ansible dev -m setup
-#      - name: Kernel
-#        debug: msg="{{ ansible_kernel }}"
-#      - name: Hostname
-#        debug: msg="{{ ansible_hostname }}"
-      - name: DateTime
-        debug: var=ansible_date_time
-      - debug: var=ansible_date_time.date #Map
-      - debug: var=ansible_date_time['date']
-      - debug: var=ansible_interfaces #List
-      - debug: var=ansible_interfaces[0]
-#      - name: Distribution
-#        debug: msg="{{ ansible_distribution }}"
-#      - name: DistributionVersion
-#        debug: msg="{{ ansible_distribution_version}}"
-#      - name: DistributionMajorVersion
-#        debug: msg="{{ ansible_distribution_major_version }}"
-#      - name: Environment
-#        debug: msg="{{ ansible_env }}"
-#      - name: AnsibleArchitecture
-#        debug: msg="{{ ansible_architecture }}"
-#      - name: AnsibleProcessorCores
-#        debug: msg="{{ ansible_processor_cores }}"
-# Create on Remote Machines
-#sudo mkdir /etc/ansible,sudo mkdir /etc/ansible/facts.d,sudo vi /etc/ansible/facts.d/environment.fact 
-#sudo chmod 777 /etc/ansible/facts.d/environment.fact 
-#[environment]
-#name=dev
-#type=web
-      - debug: var=ansible_local
-#      - debug: var=hostvars #Prints a lot of details
-      - debug: var=inventory_hostname
-      - debug: var=groups
-      - debug: var=group_names
+- hosts: dev
+  vars_files:
+    - variables.yml
+  vars:
+    variable1: "PlayBookValue"
+  tasks:
+    - name: Variable Value
+      debug: msg="Value is {{ variable1 }}"

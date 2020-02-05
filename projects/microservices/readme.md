@@ -44,3 +44,4 @@ http://localhost:8100/currency-conversion/from/EUR/to/INR/quantity/10
 #### How does Currency Conversion know the location of Currency Exchange?
 - You don't want to HARDCODE
 - Configure an Environment Variable - `CURRENCY_EXCHANGE_SERVICE_HOST`
+- --env CURRENCY_EXCHANGE_SERVICE_HOST=http://currency-exchange
