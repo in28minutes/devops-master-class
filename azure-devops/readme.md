@@ -12,26 +12,34 @@ Pre-requisites
 - Service Account
 - SSH Public Key
 
-### Create Service Account For Your Subscription To Create Azure K8S Cluster using Terraform
 
 ```
+# Create Service Account To Create Azure K8S Cluster using Terraform
 az login
 az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/<<azure_subscription_id>>"
-```
 
-### Create Public Key for SSH Access
-
-```
+# Create Public Key for SSH Access
 ssh-keygen -m PEM -t rsa -b 4096 # PEM - Privacy Enhanced Mail - Certificate Format RSA- Encryption Algorithm
-ls /Users/rangakaranam/.ssh/id_rsa.pub
+
+# ls /Users/rangakaranam/.ssh/id_rsa.pub
+
+# Get Cluster Credentials
+az aks get-credentials --name <<MyManagedCluster>> --resource-group <<MyResourceGroup>>
 ```
 
-### Get Cluster Credentials
 
-az aks get-credentials --name <<MyManagedCluster>> --resource-group <<MyResourceGroup>>
+## AWS EKS Kubernetes Cluster
 
-
-
+```
+aws configure
+aws eks --region us-east-1 update-kubeconfig --name in28minutes-cluster 
+kubectl get pods
+kubectl get svc
+kubectl get serviceaccounts
+kubectl get serviceaccounts default -o yaml
+kubectl get secret default-token-hqkvj -o yaml
+kubectl cluster-info
+```
 # Backup - DO NOT USE
 
 ### Manually setting up from local machine
