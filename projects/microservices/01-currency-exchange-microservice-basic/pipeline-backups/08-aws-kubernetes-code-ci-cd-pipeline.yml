@@ -1,9 +1,5 @@
-# Docker
-# Build a Docker image 
-# https://docs.microsoft.com/azure/devops/pipelines/languages/docker
-
-# trigger:
-# - master
+trigger:
+- master
 
 resources:
 - repo: self
@@ -21,10 +17,10 @@ stages:
       vmImage: 'ubuntu-latest'
     steps:
     - task: Docker@2
-      displayName: Build an image
+      displayName: Build and Push an image
       inputs:
-        containerRegistry: 'docker'
-        repository: 'rangakaranam/currency-exchange-azure'
+        containerRegistry: 'in28min-docker-hub'
+        repository: 'in28min/currency-exchange-devops'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
         tags: '$(tag)'
@@ -33,16 +29,22 @@ stages:
         SourceFolder: '$(System.DefaultWorkingDirectory)'
         Contents: '**/*.yaml'
         TargetFolder: '$(Build.ArtifactStagingDirectory)'
-
     - task: PublishBuildArtifacts@1
       inputs:
         PathtoPublish: '$(Build.ArtifactStagingDirectory)'
         ArtifactName: 'manifests'
         publishLocation: 'Container'
+
+# Build
+# Build Docker
+# Push Docker => 100
+# Copy Files to Staging Directory
+# Publish
 - stage: Deploy
+  displayName: Deploy image
   jobs:  
-  - job: Build
-    displayName: Build
+  - job: Deploy
+    displayName: Deploy
     pool:
       vmImage: 'ubuntu-latest'
     steps:
@@ -55,7 +57,12 @@ stages:
     - task: KubernetesManifest@0
       inputs:
         action: 'deploy'
-        kubernetesServiceConnection: 'azure-kubernetes'
+        kubernetesServiceConnection: 'aws-kubernetes-cluster-service-connection'
         namespace: 'default'
-        manifests: '$(System.ArtifactsDirectory)/deployment.yaml'
-        containers: 'rangakaranam/currency-exchange-azure:$(tag)'
+        manifests: '$(System.ArtifactsDirectory)/configuration/kubernetes/deployment.yaml'
+        containers: in28min/currency-exchange-devops:$(tag)
+
+# Deploy
+# Download 
+# image:100 => Deploy to K8S 
+# apply - kubectl apply -f deployment.yaml
