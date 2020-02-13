@@ -55,6 +55,7 @@ ChildNode4[label=<Server 3>];
     - Azure DevOps - Azure Account, Docker Basics, CI, CD, IDE
     - Azure K8S Automation - Kubernetes, Terraform (Remote Backend), IAAC, Azure DevOps, Azure, Azure CLI, FREE TIER??
     - AWS K8S Automation - Kubernetes, Terraform, Azure DevOps, AWS, AWS CLI, Costs - EKS is NOT FREE
+    - Jenkins - IDE, Docker & Docker Compose
   - Miscellaneous
     - Docker
       - Importing Docker Projects into Visual Studio Code
@@ -65,6 +66,10 @@ ChildNode4[label=<Server 3>];
       - Advantages of immutability
     - Azure DevOps
       - Consequences of Setting up One Github Repository - Pipelines. A discussion on Best Practices
+    - Jenkins
+      - Deploying Jenkins on Kubernetes
+      - Any other exercises?
+    - Course Intro's and Ending!
 - Course Section Titles
   - Installing Visual Studio Code 
     - Installing
