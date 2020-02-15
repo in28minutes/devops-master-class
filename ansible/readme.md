@@ -1,3 +1,23 @@
+# Ansible
+
+- Step 01 - Creating EC2 Instances for Ansible - Manually and with Terraform
+- Step 02 - Setting Ansible Project with cfg and ansible hosts
+- Step 03 - Playing with Ansible Commands
+- Step 04 - Playing with Ansible Host File and Custom Groups
+- Step 05 - Creating an Ansible Playbook for Ping
+- Step 06 - Understanding Ansible Terminology - Control Node, Managed Nodes, Inventory
+- Step 07 - Creating New Ansible Playbook for Executing Shell Commands
+- Step 08 - Playing with Ansible Variables
+- Step 09 - Creating New Ansible Playbook for Understanding Ansible Facts
+- Step 10 - Creating New Ansible Playbook for Installing Apache and Serving HTML
+- Step 11 - Reuse and Executing Multiple Ansible Playbooks
+- Step 12 - Understanding Conditionals and Loops with Ansible
+- Step 13 - Configuring EC2 Dynamic Inventory with Ansible
+- Step 14 - Creating AWS EC2 Instances with Ansible
+- Step 15 - Providing Declarative Configuration with Ansible
+- Step 16 - Deleting all AWS EC2 Instances
+
+
 ### Prerequisites
 
 - 3 EC2 Instances 

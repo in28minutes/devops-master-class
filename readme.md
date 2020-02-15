@@ -145,6 +145,8 @@
 - Step 13 - Build and Push Docker Image in Azure DevOps - Part 1
 - Step 14 - Build and Push Docker Image in Azure DevOps - Part 2
 - Step 15 - Playing with Azure DevOps Releases
+
+### CI, CD, IAAC with Kubernetes on Azure with Azure DevOps - Pipelines
 - Step 01 - Review Terraform Configuration for Azure Kubernetes Cluster Creation
 - Step 02 - Setting up Client ID, Secret and Public Key for Azure Kubernetes Cluster Creation
 - Step 03 - Creating Azure DevOps Pipeline for Azure Kubernetes Cluster IAAC 
@@ -169,7 +171,7 @@
 - Step 10 - Performing Terraform destroy to delete AWS EKS Cluster in Azure DevOps - 1
 - Step 11 - Performing Terraform destroy to delete AWS EKS Cluster in Azure DevOps - 2
 
-### CI, CD, IAAC with Kubernetes on Azure with Azure DevOps - Pipelines
+### Azure DevOps - Management Tools
 - Step 01 - Getting Started with Azure DevOps with Demo Generator
 - Step 02 - Overview of Azure DevOps - Boards, Wiki, Repos and Pipelines
 - Step 03 - Exploring Azure DevOps Boards - Epics, Features and User Stories

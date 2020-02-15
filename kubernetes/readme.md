@@ -1,5 +1,47 @@
 # Kubernetes
 
+## Projects
+- Hello World REST API
+- 2 Microservices - Currency Exchange and Currency Conversion
+
+## Steps
+- Step 01 - Getting Started with Docker, Kubernetes and Google Kubernetes Engine
+- Step 02 - Creating Google Cloud Account
+- Step 03 - Creating Kubernetes Cluster with Google Kubernete Engine (GKE)
+- Step 04 - Review Kubernetes Cluster and Learn Few Fun Facts about Kubernetes
+- Step 05 - Deploy Your First Spring Boot Application to Kubernetes Cluster
+- Step 06 - Quick Look at Kubernetes Concepts - Pods, Replica Sets and Deployment
+- Step 07 - Understanding Pods in Kubernetes
+- Step 08 - Understanding ReplicaSets in Kubernetes
+- Step 09 - Understanding Deployment in Kubernetes
+- Step 10 - Quick Review of Kubernetes Concepts - Pods, Replica Sets and Deployment
+- Step 11 - Understanding Services in Kubernetes
+- Step 12 - Quick Review of GKE on Google Cloud Console 
+- Step 13 - Understanding Kubernetes Architecture - Master Node and Nodes
+- Step 14 - Understand Google Cloud Regions and Zones
+- Step 15 - Installing GCloud
+- Step 16 - Installing Kubectl 
+- Step 17 - Understand Kubernetes Rollouts
+- Step 18 - Generate Kubernetes YAML Configuration for Deployment and Service
+- Step 19 - Understand and Improve Kubernetes YAML Configuration
+- Step 20 - Using Kubernetes YAML Configuration to Create Resources
+- Step 21 - Understanding Kubernetes YAML Configuration - Labels and Selectors
+- Step 22 - Quick Fix to reduce release downtime with minReadySeconds
+- Step 23 - Understanding Replica Sets in Depth - Using Kubernetes YAML Config
+- Step 24 - Configure Multiple Kubernetes Deployments with One Service
+- Step 25 - Playing with Kubernetes Commands - Top Node and Pod
+- Step 26 - Delete Hello World Deployments
+- Step 27 - Quick Introduction to Microservices - CE and CC
+- Step 28 - Deploy Microservices to Kubernetes
+- Step 29 - Understand Environment Variables created by Kubernetes for Services
+- Step 30 - Microservices and Kubernetes Service Discovery - Part 1
+- Step 31 - Microservices and Kubernetes Service Discovery - Part 2 DNS
+- Step 32 - Microservices Centralized Configuration with Kubernetes ConfigMaps
+- Step 33 - Simplify Microservices with Kubernetes Ingress - Part 1
+- Step 34 - Simplify Microservices with Kubernetes Ingress - Part 2
+- Step 35 - Delete Kubernetes Clusters
+
+
 ## Commands
 
 ```
