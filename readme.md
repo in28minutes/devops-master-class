@@ -7,6 +7,8 @@
 - Jenkins - https://github.com/in28minutes/jenkin-devops-microservice
 
 ## Step By Step Details
+
+### Docker and DevOps
 - 01 Step 01 - Docker and DevOps - Installation and Introduction
 - 01 Step 02 - Your First Docker Usecase
 - 01 Step 03 - Important Docker Concepts - Registry, Repository, Tag, Image and Container
@@ -32,6 +34,8 @@
 - 01 Step 23 - Using Custom Networking to Connect Microservices
 - 01 Step 24 - Using Docker Compose to Simplify Microservices Launch
 - 01 Step 25 - Understanding Docker Compose further
+
+### Kubernetes and DevOps
 - 02 Step 01 - Getting Started with Docker, Kubernetes and Google Kubernetes Engine
 - 02 Step 02 - Creating Google Cloud Account
 - 02 Step 03 - Creating Kubernetes Cluster with Google Kubernete Engine (GKE)
@@ -67,6 +71,8 @@
 - 02 Step 33 - Simplify Microservices with Kubernetes Ingress - Part 1
 - 02 Step 34 - Simplify Microservices with Kubernetes Ingress - Part 2
 - 02 Step 35 - Delete Kubernetes Clusters
+
+### Terraform
 - 03 Step 01 - Creating and Initializing First Terraform Project
 - 03 Step 02 - Create AWS IAM User Access Key and Secret
 - 03 Step 03 - Configure Terraform Environment Variables for AWS Access Keys
@@ -104,6 +110,8 @@
 - 03 Step 35 - Update User Project to use AWS S3 Remote Backend
 - 03 Step 36 - Creating multiple environments using Terraform Workspaces
 - 03 Step 37 - Creating multiple environments using Terraform Modules
+
+### Ansible
 - 04 Step 01 - Creating EC2 Instances for Ansible - Manually and with Terraform
 - 04 Step 02 - Setting Ansible Project with cfg and ansible hosts
 - 04 Step 03 - Playing with Ansible Commands
@@ -120,6 +128,8 @@
 - 04 Step 14 - Creating AWS EC2 Instances with Ansible
 - 04 Step 15 - Providing Declarative Configuration with Ansible
 - 04 Step 16 - Deleting all AWS EC2 Instances
+
+### Azure DevOps - Pipelines
 - 05 Step 01 - Getting Started with Azure DevOps - First Project
 - 05 Step 02 - Setting up Git Repo for Azure DevOps Pipeline
 - 05 Step 03 - Creating your first Azure DevOps Pipeline
@@ -145,6 +155,8 @@
 - 06 Step 08 - Creating V2 and Enable Build and Push of Docker Image - Part 2
 - 06 Step 09 - Performing Terraform destroy to delete Azure Kubernetes Cluster in Azure DevOps
 - 06 Step 10 - Quick Review of Terraform destroy
+
+### CI, CD, IAAC with Kubernetes on AWS with Azure DevOps - Pipelines
 - 07 Step 01 - Review Terraform Configuration for AWS EKS Cluster Creation
 - 07 Step 02 - Setup AWS S3 Buckets and Subnet Configuration
 - 07 Step 03 - Enable AWS Tools in Azure DevOps and Create Azure DevOps Pipeline
@@ -156,6 +168,8 @@
 - 07 Step 09 - Creating V3 and Enable Build and Push of Docker Image - Part 2
 - 07 Step 10 - Performing Terraform destroy to delete AWS EKS Cluster in Azure DevOps - 1
 - 07 Step 11 - Performing Terraform destroy to delete AWS EKS Cluster in Azure DevOps - 2
+
+### CI, CD, IAAC with Kubernetes on Azure with Azure DevOps - Pipelines
 - 08 Step 01 - Getting Started with Azure DevOps with Demo Generator
 - 08 Step 02 - Overview of Azure DevOps - Boards, Wiki, Repos and Pipelines
 - 08 Step 03 - Exploring Azure DevOps Boards - Epics, Features and User Stories
@@ -165,6 +179,8 @@
 - 08 Step 07 - Playing with Azure DevOps Repos
 - 08 Step 08 - Quick Review of Azure DevOps Pipelines
 - 08 Step 09 - Quick Review of Azure DevOps
+
+### CI/CD with Jenkins
 - 09 Step 01 - Introduction and Launching Jenkins as Docker Container
 - 09 Step 02 - Initializing Jenkins Plugins and Creating Github Repo
 - 09 Step 03 - Setting up Docker and Maven in Jenkins and First Pipeline Run
@@ -177,6 +193,7 @@
 - 09 Step 10 - Running Unit Tests and Integration Tests in Jenkins Pipelines - 2
 - 09 Step 11 - Build and Push Docker Image in Jenkins Pipelines - 1
 - 09 Step 12 - Build and Push Docker Image in Jenkins Pipelines - 2
+
 ## Next Steps
 
 ## Diagrams
@@ -201,6 +218,257 @@ ChildNode1[label=<Ansible>];
 ChildNode2[label=<Server 1>];
 ChildNode3[label=<Server 2>];
 ChildNode4[label=<Server 3>];
+
+}
+
+graph architecture {
+layout="circo";
+node[style=filled,  fillcolor="#D14D28", fontcolor=white]
+//node [style=filled,color="#D14D28", fontcolor=white];
+rankdir = LR
+node[shape = circle,  width=1]
+edge [dir=forward]
+
+Node1 -- Node2
+Node2 -- Node3
+Node3 -- Node4
+Node4 -- Node1
+//Node4 -- Node5
+//Node5 -- Node6
+
+Node1[label=<DEV>]
+Node2[label=<QA>]
+Node3[label=<STAGE>]
+Node4[label=<PROD>]
+//Node5[label=<5>]
+//Node6[label=<6>]
+
+}
+
+
+graph architecture {
+rankdir = LR
+node[shape = circle,  width=1, style=filled,fillcolor="#59C8DE"]
+//shape = record
+edge [dir=forward]
+
+Node1 -- Node2
+Node2 -- Node3
+Node3 -- Node4
+//Node4 -- Node1
+//Node4 -- Node5
+//Node5 -- Node6
+
+Node1[label=<DEV>]
+Node2[label=<QA>]
+Node3[label=<STAGE>]
+Node4[label=<PROD>]
+//Node5[label=<5>]
+//Node6[label=<6>]
+
+}
+
+graph architecture {
+rankdir = LR
+node[shape = circle,  width=1, style=filled,fillcolor="#59C8DE"]
+//shape = record
+edge [dir=forward]
+
+Node3 -- Node4
+Node4 -- Node5
+Node5 -- Node6
+Node6 -- Node7
+Node7 -- Node1
+Node1 -- Node2
+Node2 -- Node3
+
+Node1[label=<Code>]
+Node2[label=<Build>]
+Node3[label=<Test>]
+Node4[label=<Release>]
+Node5[label=<Deploy>]
+Node6[label=<Review>]
+Node7[label=<Plan>]
+
+}
+
+graph architecture {
+rankdir = LR
+node[shape = circle,  width=1.3, style=filled,color="#59C8DE", fontcolor=black]
+//shape = record
+//fillcolor="#59C8DE"
+//edge [dir=forward]
+edge [width=0]
+#D14D28
+
+Node3 -- Node4[style=invis]
+Node4 -- Node5[style=invis]
+Node1 -- Node2[style=invis]
+Node2 -- Node3[style=invis]
+
+Node1[label=<Business>]
+Node2[label=<Architecture>]
+Node3[label=<Development>]
+Node4[label=<Testing>]
+Node5[label=<Operations>]
+
+}
+
+graph architecture {
+rankdir = LR
+node[shape = circle,  width=1, style=filled,color="#D14D28", fontcolor=white]
+//shape = record
+//fillcolor="#59C8DE"
+edge [dir=forward]
+
+Node3 -- Node4
+Node4 -- Node5
+Node5 -- Node6
+Node1 -- Node2
+Node2 -- Node3
+
+Node1[label=<Vision>]
+Node2[label=<Iteration 1>]
+Node3[label=<Iteration 2>]
+Node4[label=<...>]
+Node5[label=<Iteration n>]
+Node6[label=<Product>]
+
+}
+
+graph architecture {
+rankdir = LR
+node[shape = circle,  width=1, style=filled,fillcolor="#59C8DE"]
+//shape = record
+edge [dir=forward]
+
+Node3 -- Node4
+Node4 -- Node5
+Node5 -- Node6
+Node6 -- Node7
+Node7 -- Node8
+Node8 -- Node1
+Node1 -- Node2
+Node2 -- Node3
+
+Node1[label=<Code>]
+Node2[label=<Build>]
+Node3[label=<Test>]
+Node4[label=<Release>]
+Node5[label=<Deploy>]
+Node6[label=<Operate>]
+Node7[label=<Monitor>]
+Node8[label=<Plan>, fillcolor=white]
+
+}
+
+graph architecture {
+rankdir = LR
+node[shape = circle,  width=2, style=filled,fillcolor="#D14D28", fontcolor=white]
+//shape = record
+//edge [dir=forward]
+
+Node3 -- Node4
+Node4 -- Node5
+Node5 -- Node6
+Node6 -- Node7
+Node7 -- Node8
+Node8 -- Node1
+Node1 -- Node2
+Node2 -- Node3
+
+Node1[label=<<FONT POINT-SIZE="20">Continuous<br/>Planning</FONT>>]
+Node2[label=<<FONT POINT-SIZE="20">Continuous<br/>Development</FONT>>]
+Node3[label=<<FONT POINT-SIZE="20">Continuous<br/>Integration</FONT>>]
+Node4[label=<<FONT POINT-SIZE="20">Continuous<br/>Deployment</FONT>>]
+Node5[label=<<FONT POINT-SIZE="20">Continuous<br/>Testing</FONT>>]
+Node6[label=<<FONT POINT-SIZE="20">Continuous<br/>Delivery</FONT>>]
+Node7[label=<<FONT POINT-SIZE="20">Continuous<br/>Monitoring</FONT>>]
+Node8[label=<<FONT POINT-SIZE="20">Continuous<br/>Feedback</FONT>>]
+
+}
+
+graph architecture {
+rankdir = LR
+node[shape = circle,  width=1.6, style=filled,fillcolor="#D14D28", fontcolor=white]
+//shape = record
+edge [dir=forward]
+{ rank=same Node1 Node2 Node3 }
+{ rank=same Node7 Node8 Node9 }
+
+Node3 -- Node4
+Node4 -- Node5
+Node5 -- Node6
+Node6 -- Node7
+Node7 -- Node8
+Node8 -- Node9
+Node1 -- Node2
+Node2 -- Node3
+
+Node1[label=<<FONT POINT-SIZE="20">Code<br/>Commit</FONT>>]
+Node2[label=<<FONT POINT-SIZE="20">Unit<br/>Tests</FONT>>]
+Node3[label=<<FONT POINT-SIZE="20">Integration<br/>Tests</FONT>>]
+Node4[label=<<FONT POINT-SIZE="20">Package<br/></FONT>>]
+Node5[label=<<FONT POINT-SIZE="20">Deploy</FONT>>]
+Node6[label=<<FONT POINT-SIZE="20">Automated<br/> Tests</FONT>>]
+Node7[label=<<FONT POINT-SIZE="20">Testing<br/>Approval</FONT>>, fillcolor=white, fontcolor=black]
+Node8[label=<<FONT POINT-SIZE="20">Deploy<br/>NEXT</FONT>>]
+Node9[label=<<FONT POINT-SIZE="20">..</FONT>>]
+
+}
+
+graph architecture {
+rankdir = LR
+node[shape = circle,  width=1.6, style=filled,fillcolor="#D14D28", fontcolor=white]
+//shape = record
+edge [dir=forward]
+
+Node3 -- Node4
+Node4 -- Node5
+Node1 -- Node2
+Node2 -- Node3
+
+Node1[label=<<FONT POINT-SIZE="20">Provision<br/>Server</FONT>>]
+Node2[label=<<FONT POINT-SIZE="20">Install<br/>Java</FONT>>]
+Node3[label=<<FONT POINT-SIZE="20">Install<br/>Tomcat</FONT>>]
+Node4[label=<<FONT POINT-SIZE="20">Configure<br/>Tomcat</FONT>>]
+Node5[label=<<FONT POINT-SIZE="20">Deploy<br/>Application</FONT>>]
+
+}
+
+graph architecture {
+rankdir = LR
+node[shape = circle,  width=1.6, style=filled,fillcolor="#D14D28", fontcolor=white]
+//shape = record
+edge [dir=forward]
+
+Node3 -- Node4
+Node4 -- Node5
+Node1 -- Node2
+Node2 -- Node3
+
+Node1[label=<<FONT POINT-SIZE="20">Create<br/>Template</FONT>>]
+Node2[label=<<FONT POINT-SIZE="20">Provision<br/>Server</FONT>>]
+Node3[label=<<FONT POINT-SIZE="20">Install<br/>Software</FONT>>]
+Node4[label=<<FONT POINT-SIZE="20">Configure<br/>Software</FONT>>]
+Node5[label=<<FONT POINT-SIZE="20">Deploy<br/>App</FONT>>]
+
+}
+
+graph architecture {
+rankdir = LR
+node[shape = circle,  width=1.6, style=filled,fillcolor="#D14D28", fontcolor=white]
+//shape = record
+edge [dir=forward]
+
+Node3 -- Node4
+Node1 -- Node2
+Node2 -- Node3
+
+Node1[label=<<FONT POINT-SIZE="20">Provision<br/>Server v1</FONT>>]
+Node2[label=<<FONT POINT-SIZE="20">Provision<br/>Server v2</FONT>>]
+Node3[label=<<FONT POINT-SIZE="20">Remove<br/>Server v1</FONT>>]
+Node4[label=<<FONT POINT-SIZE="20">..<br/></FONT>>]
 
 }
 ```
@@ -253,6 +521,9 @@ ChildNode4[label=<Server 3>];
       - Deploying Jenkins on Kubernetes
       - Any other exercises?
     - Course Intro's and Ending!
+    - DevOps Periodic Table DT27 - Xebia
+    - DevOps Assessment DT128 - Ravi's Video
+    - Ravi's Presentation
 - Appendix Course Section Titles
   - Installing Visual Studio Code 
     - Installing DONE
