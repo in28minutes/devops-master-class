@@ -46,38 +46,25 @@ This course would be a perfect first step as an introduction to DevOps.
 
 
 ## What you'll learn
-- You will Learn the Fundamentals of DevOps and Kubernetes from Zero, no previous experience required
-- You will learn the Basic Kubernetes Concepts - Pods, Replica Sets and Deployment
-- You will learn the Basics of Docker - Images, Repository and Containers
-- You will learn the important Kubernetes and Docker commands 
-- You will understand Docker and Kubernetes Architecture
-- You will learn to use Kubernetes to Manage Your Clusters
-- You will learn the basics of Microservices
-- You will use Kubernetes Declaratively with YAML Configuration
-- You will learn to expose your Kubernetes Deployments with Services and Ingress
+- You will learn DevOps with Docker, Kubernetes and Azure DevOps from ZERO, no previous experience required
+- You will learn the fundamentals of 6 Most Popular DevOps Tools - Docker, Kubernetes, Azure Devops, Jenkins, Terraform, and Ansible
+- You will learn the building blocks of DevOps - Continuous Integration, Continuous Delivery and Infrastructure as Code
+- You will learn to implement Azure Devops Pipelines integrating Docker, Kubernetes and  Terraform on AWS EKS and Azure AKS
+- You will learn DevOps with Continuous Integration & Continuous Delivery on Azure DevOps and Jenkins
+- You will do containerization and container orchestration for microservices with Docker and Kubernetes
 - You will play with Docker, Docker Compose and Kubernetes
-- You will implement Service Discovery, Centralized Configuration and Load Balancing for microservices deployed in Kubernetes
-- You will implement different Auto Scaling approaches with Kubernetes
-- You will use Google Stackdriver for Tracing, Error Reporting and Logging
-- You will integrate Spring Boot Microservices on Kubernetes with Istio
-- You will perform Blue Green Deployments and Canary Deployments with Istio
-- You will integrate Kiali, Graphana and Prometheus with Istio and Kubernetes
-- You will implement Distributed Tracing for Spring Boot Microsevices with Istio and Jaegar
-- You will use Helm to Automate Microservices Deployment on Kubernetes
+- You will implement Service Discovery, Centralized Configuration and Load Balancing for Docker Microservices deployed in Kubernetes
 - You will Join 300,000 Learners having AMAZING LEARNING Experiences with in28Minutes
 
 ## Requirements
 - You have an attitude to learn while having fun :)
-- You have some programming experience with Java, Spring and Spring Boot
-- You DO NOT need to have any experience with Kubernetes or Docker
-- We will help you install Eclipse, Git client and Docker Desktop
+- You have some programming experience with either Java, Python or JavaScript
+- You DO NOT need to have any experience with DevOps, Kubernetes, Docker or Azure DevOps
+- We will help you install the tools and create your cloud accounts
 
 ## Who is this course for
-- You are a Java Spring Boot developer getting started with the Cloud
-- You want to deploy your Java applications with Kubernetes
-- You want to deploy your Spring Boot applications with Kubernetes
-- You are a Java Developer and You are curious about Kubernetes
-- You want to learn to play with Docker, Kubernetes and Spring Boot Microservices
+- You are a programmer wanting to explore DevOps with Docker, Kubernetes and Azure DevOps
+- You want to automate deployment of your microservices to the cloud using DevOps with Docker, Kubernetes and Azure DevOps
 
 ## Step By Step Details
 
@@ -218,7 +205,7 @@ This course would be a perfect first step as an introduction to DevOps.
 - Step 15 - Playing with Azure DevOps Releases
 
 ### CI, CD and IAAC on Azure AKS Kubernetes Clusters with Docker, Azure DevOps and Terraform
-- Step 00 - Geting Started with IAAC for Azure AKS with Azure DevOps, Terraform and Kubernetes
+- Step 00 - Getting Started with IAAC for Azure AKS with Azure DevOps, Terraform and Kubernetes
 - Step 01 - Review Terraform Configuration for Azure Kubernetes Cluster Creation
 - Step 02 - Setting up Client ID, Secret and Public Key for Azure Kubernetes Cluster Creation
 - Step 03 - Creating Azure DevOps Pipeline for Azure Kubernetes Cluster IAAC
