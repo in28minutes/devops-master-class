@@ -1,5 +1,6 @@
 # Ansible
 
+## Step By Step Details
 - Step 01 - Creating EC2 Instances for Ansible - Manually and with Terraform
 - Step 02 - Setting Ansible Project with cfg and ansible hosts
 - Step 03 - Playing with Ansible Commands
@@ -17,9 +18,7 @@
 - Step 15 - Providing Declarative Configuration with Ansible
 - Step 16 - Deleting all AWS EC2 Instances
 
-
 ### Prerequisites
-
 - 3 EC2 Instances 
     - 2 using Terraform
     - 1 Manually
@@ -96,7 +95,4 @@ ansible-inventory --graph
 ansible-playbook playbooks/08-dynamic-inventory-ping.yml 
 ansible-playbook playbooks/09-create-ec2.yml 
 
-
-
-TODO
 ```
