@@ -611,7 +611,6 @@ Node4[label=<<FONT POINT-SIZE="20">..<br/></FONT>>]
   - After a Month
     - UFB
 - Course Upload
-  - Lecture with Github Repository Link
   - Lectures with All Commands for each section
   - Make two github repos public
   - Docker Text Instructions for Windows
