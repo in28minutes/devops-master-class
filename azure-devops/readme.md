@@ -99,6 +99,7 @@ kubectl get serviceaccounts default -o yaml
 kubectl get secret default-token-hqkvj -o yaml
 kubectl cluster-info
 ```
+
 # Backup - DO NOT USE
 
 ### Manually setting up from local machine
