@@ -1,5 +1,5 @@
 provider "azurerm" {
-  version = "~>2.0.0"
+  //version = "~>2.0.0"
   features {}
   client_id       = var.client_id   # ENVIRONMENT VARIABLE
   client_secret   = var.client_secret # ENVIRONMENT VARIABLE
