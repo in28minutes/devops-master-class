@@ -1,6 +1,6 @@
 provider "aws" {
     region = "us-east-1"
-    version = "~> 2.46"
+    //version = "~> 2.46"
 }
 
 //S3 bucket
