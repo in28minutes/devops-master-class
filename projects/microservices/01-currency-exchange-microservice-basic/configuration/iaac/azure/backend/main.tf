@@ -16,7 +16,7 @@ resource "azurerm_resource_group" "resource_group" {
 }
 
 resource "azurerm_storage_account" "storage_account" {
-  name                     = "${var.environment}in28minsterrastestor"
+  name                     = "${var.environment}terraformstatestorage"
   location                 = var.location
   resource_group_name      = azurerm_resource_group.resource_group.name
   account_tier             = "Standard"
@@ -27,6 +27,6 @@ resource "azurerm_storage_account" "storage_account" {
 }
 
 resource "azurerm_storage_container" "storage_container" {
-  name                  = "${var.environment}in28minsterrastatestorcontainer"
+  name                  = "${var.environment}terraformstatestoragecontainer"
   storage_account_name  = azurerm_storage_account.storage_account.name
 }
