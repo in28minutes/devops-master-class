@@ -1,4 +1,4 @@
-# Master Devops - Docker, Kubernetes, Terraform and Azure Devops
+# DevOps for Beginners - Docker, Kubernetes, Terraform and Azure Devops
 
 [![Image](https://www.springboottutorial.com/images/Course-DevOps.png "DevOps Course")](https://links.in28minutes.com/DevOps-SBT)
 
