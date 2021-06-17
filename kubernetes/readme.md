@@ -85,7 +85,7 @@ kubectl scale deployment hello-world-rest-api --replicas=3
 kubectl get pods
 kubectl get replicaset
 kubectl get events
-kubectl get events --sort.by=.metadata.creationTimestamp
+kubectl get events --sort-by=.metadata.creationTimestamp
 
 kubectl get rs
 kubectl get rs -o wide
