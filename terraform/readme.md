@@ -59,7 +59,7 @@ terraform console
 terraform apply -refresh=false
 terraform plan -out iam.tfplan
 terraform apply "iam.tfplan"
-terraform apply -target=aws_iam_user.my_iam_user
+terraform apply -target="aws_iam_user.my_iam_user"
 terraform destroy
 terraform validate
 terraform fmt
