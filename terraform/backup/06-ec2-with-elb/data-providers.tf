@@ -1,14 +1,7 @@
-data "aws_subnet" "default_subnet_1" {
+data "aws_subnets" "default_subnets" {
   filter {
-    name   = "availability-zone"
-    values = ["us-east-1d"]
-  }
-}
-
-data "aws_subnet" "default_subnet_2" {
-  filter {
-    name   = "availability-zone"
-    values = ["us-east-1a"]
+    name   = "vpc-id"
+    values = [aws_default_vpc.default.id]
   }
 }
 

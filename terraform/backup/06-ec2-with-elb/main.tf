@@ -60,7 +60,7 @@ resource "aws_security_group" "elb_sg" {
 
 resource "aws_elb" "elb" {
   name            = "elb"
-  subnets         = [data.aws_subnet.default_subnet_1.id, data.aws_subnet.default_subnet_2.id]
+  subnets         = data.aws_subnets.default_subnets.ids
   security_groups = [aws_security_group.elb_sg.id]
   instances       = values(aws_instance.http_servers).*.id
 
@@ -79,7 +79,7 @@ resource "aws_instance" "http_servers" {
   instance_type          = "t2.micro"
   vpc_security_group_ids = [aws_security_group.http_server_sg.id]
 
-  for_each  = toset([data.aws_subnet.default_subnet_1.id, data.aws_subnet.default_subnet_2.id])
+  for_each  = toset(data.aws_subnets.default_subnets.ids)
   subnet_id = each.value
 
   tags = {
