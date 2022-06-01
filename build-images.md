@@ -25,4 +25,17 @@ docker buildx build \
 --push \
 .
 
+# NOT EXECUTED
+docker buildx build \
+--platform linux/amd64,linux/arm64 \
+-t in28min/currency-exchange:0.0.1-RELEASE \
+--push \
+.
+
+# NOT EXECUTED
+docker buildx build \
+--platform linux/amd64,linux/arm64 \
+-t in28min/currency-conversion:0.0.1-RELEASE \
+--push \
+.
 ```
