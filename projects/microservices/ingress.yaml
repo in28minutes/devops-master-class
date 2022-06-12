@@ -1,4 +1,4 @@
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: gateway-ingress
@@ -8,11 +8,17 @@ spec:
   rules:
   - http:
       paths:
-      - path: /currency-exchange/*
+      - path: /currency-exchange/
+        pathType: Prefix
         backend:
-          serviceName: currency-exchange
-          servicePort: 8000          
-      - path: /currency-conversion/*
+          service:
+           name: currency-exchange
+           port:
+              number: 8000     
+      - path:  /currency-conversion/
+        pathType: Prefix
         backend:
-          serviceName: currency-conversion
-          servicePort: 8100
+          service: 
+           name: currency-conversion
+           port:
+              number: 8100 
