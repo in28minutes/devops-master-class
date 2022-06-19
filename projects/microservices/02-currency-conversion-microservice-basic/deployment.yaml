@@ -8,6 +8,7 @@ metadata:
 spec:
   replicas: 2 #CHANGE
   minReadySeconds: 45
+  progressDeadlineSeconds: 600
   selector:
     matchLabels:
       app: currency-conversion
