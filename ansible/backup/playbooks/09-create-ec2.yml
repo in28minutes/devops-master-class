@@ -11,7 +11,7 @@
         count_tag: {type: http}
         vpc_subnet_id: subnet-75cb9912
         assign_public_ip: yes
-        group: ["http_server_sg"]
+        security_groups: ["http_server_sg"]
         tags: {type: http, Environment: QA}
         wait: yes
       register: ec2_output
