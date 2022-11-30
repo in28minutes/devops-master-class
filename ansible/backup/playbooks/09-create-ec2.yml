@@ -10,7 +10,8 @@
         exact_count: 2
         count_tag: {type: http}
         vpc_subnet_id: subnet-75cb9912
-        assign_public_ip: yes
+        network:
+          assign_public_ip: true
         security_groups: ["http_server_sg"]
         tags: {type: http, Environment: QA}
         wait: yes
