@@ -12,7 +12,7 @@
         vpc_subnet_id: subnet-75cb9912
         assign_public_ip: yes
         group: ["http_server_sg"]
-        instance_tags: {type: http, Environment: QA}
+        tags: {type: http, Environment: QA}
         wait: yes
       register: ec2_output
     - debug: var=ec2_output
