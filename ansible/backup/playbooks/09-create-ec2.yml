@@ -1,7 +1,7 @@
 ---
 - hosts: localhost
   tasks:
-    - ec2:
+    - ec2_instance:
         key_name: default-ec2
         instance_type: t2.micro
         image: ami-062f7200baf2fa504
