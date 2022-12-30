@@ -1,0 +1,103 @@
+{
+  "version": 4,
+  "terraform_version": "1.3.6",
+  "serial": 19,
+  "lineage": "d9c75993-9bb6-efe5-f34a-bd19bc924d88",
+  "outputs": {},
+  "resources": [
+    {
+      "mode": "managed",
+      "type": "aws_iam_user",
+      "name": "my_iam_users",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "index_key": "jane",
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:iam::355852034624:user/jane",
+            "force_destroy": false,
+            "id": "jane",
+            "name": "jane",
+            "path": "/",
+            "permissions_boundary": null,
+            "tags": null,
+            "tags_all": {},
+            "unique_id": "AIDAVFWTPEJAMCULGW6SN"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA=="
+        },
+        {
+          "index_key": "ranga",
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:iam::355852034624:user/ranga",
+            "force_destroy": false,
+            "id": "ranga",
+            "name": "ranga",
+            "path": "/",
+            "permissions_boundary": null,
+            "tags": null,
+            "tags_all": {},
+            "unique_id": "AIDAVFWTPEJAO4FJMFFZB"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA=="
+        },
+        {
+          "index_key": "ravs",
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:iam::355852034624:user/ravs",
+            "force_destroy": false,
+            "id": "ravs",
+            "name": "ravs",
+            "path": "/",
+            "permissions_boundary": null,
+            "tags": null,
+            "tags_all": {},
+            "unique_id": "AIDAVFWTPEJAG42DV5GUV"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA=="
+        },
+        {
+          "index_key": "sats",
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:iam::355852034624:user/sats",
+            "force_destroy": false,
+            "id": "sats",
+            "name": "sats",
+            "path": "/",
+            "permissions_boundary": null,
+            "tags": null,
+            "tags_all": {},
+            "unique_id": "AIDAVFWTPEJAGJDVS3IWP"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA=="
+        },
+        {
+          "index_key": "tom",
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:iam::355852034624:user/tom",
+            "force_destroy": false,
+            "id": "tom",
+            "name": "tom",
+            "path": "/",
+            "permissions_boundary": null,
+            "tags": null,
+            "tags_all": {},
+            "unique_id": "AIDAVFWTPEJAJNNDAAHPS"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA=="
+        }
+      ]
+    }
+  ],
+  "check_results": null
+}
