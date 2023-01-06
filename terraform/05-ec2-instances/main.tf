@@ -1,4 +1,6 @@
-
+variable "aws_key_pair" {
+  default = "C:/Users/gemes/Downloads/terraform/aws_key_pair/default-ec2.pem"
+}
 provider "aws" {
   region = "us-east-1"
 }
@@ -30,5 +32,28 @@ resource "aws_security_group" "http_server_sg" {
   }
   tags = {
     name = "http_server_sg"
+  }
+}
+
+resource "aws_instance" "http_server" {
+  ami                    = "ami-0b5eea76982371e91"
+  key_name               = "default-ec2"
+  instance_type          = "t2.micro"
+  vpc_security_group_ids = [aws_security_group.http_server_sg.id]
+  subnet_id              = "subnet-09936102560fa544c"
+
+  connection {
+    type        = "ssh"
+    host        = self.public_ip
+    user        = "ec2-user"
+    private_key = file(var.aws_key_pair)
+  }
+
+  provisioner "remote-exec" {
+    inline = [
+      "sudo yum install httpd -y",
+      "sudo service httpd start",
+      "echo Welcome to in28minutes - virtual server is at ${self.public_dns} | sudo tee /var/www/html/index.html"
+    ]
   }
 }
