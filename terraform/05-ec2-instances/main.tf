@@ -5,11 +5,24 @@ provider "aws" {
   region = "us-east-1"
 }
 
+resource "aws_default_vpc" "default" {
+  tags = {
+    name = "Default vpc"
+  }
+}
+
+data "aws_subnets" "default_subnets" {
+  filter{
+    name = "vpc-id"
+    values = [aws_default_vpc.default.id]
+  }
+}
 //HTTP Server -> SG
 //SG -> 80 TCP, 22 TCP, CIDR ["0.0.0.0/0"]
 resource "aws_security_group" "http_server_sg" {
   name   = "http_server_sg"
-  vpc_id = "vpc-02523c91a94e96bca"
+  //vpc_id = "vpc-02523c91a94e96bca"
+  vpc_id = aws_default_vpc.default.id
 
   ingress {
     from_port   = 80
