@@ -12,15 +12,27 @@ resource "aws_default_vpc" "default" {
 }
 
 data "aws_subnets" "default_subnets" {
-  filter{
-    name = "vpc-id"
+  filter {
+    name   = "vpc-id"
     values = [aws_default_vpc.default.id]
   }
+}
+
+data "aws_ami" "aws_linux_2_latest" {
+  most_recent = true
+  owners      = ["amazon"]
+  filter {
+    name   = "name"
+    values = ["amzn2-ami-hvm-*"]
+  }
+}
+data "aws_ami_ids" "aws_linux_2_latest_ids" {
+  owners = ["amazon"]
 }
 //HTTP Server -> SG
 //SG -> 80 TCP, 22 TCP, CIDR ["0.0.0.0/0"]
 resource "aws_security_group" "http_server_sg" {
-  name   = "http_server_sg"
+  name = "http_server_sg"
   //vpc_id = "vpc-02523c91a94e96bca"
   vpc_id = aws_default_vpc.default.id
 
@@ -49,7 +61,8 @@ resource "aws_security_group" "http_server_sg" {
 }
 
 resource "aws_instance" "http_server" {
-  ami                    = "ami-0b5eea76982371e91"
+  #ami                   = "ami-0b5eea76982371e91"
+  ami                    = data.aws_ami.aws_linux_2_latest.id
   key_name               = "default-ec2"
   instance_type          = "t2.micro"
   vpc_security_group_ids = [aws_security_group.http_server_sg.id]
