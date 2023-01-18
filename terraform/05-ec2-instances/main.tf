@@ -3,16 +3,12 @@ provider "aws" {
 }
 
 resource "aws_default_vpc" "default" {
-  tags = {
-    name = "Default vpc"
-  }
+
 }
 
-//HTTP Server -> SG
-//SG -> 80 TCP, 22 TCP, CIDR ["0.0.0.0/0"]
 resource "aws_security_group" "http_server_sg" {
   name = "http_server_sg"
-  //vpc_id = "vpc-02523c91a94e96bca"
+  //vpc_id =  "vpc-02523c91a94e96bca"
   vpc_id = aws_default_vpc.default.id
 
   ingress {
@@ -28,12 +24,14 @@ resource "aws_security_group" "http_server_sg" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
+
   egress {
     from_port   = 0
     to_port     = 0
     protocol    = -1
     cidr_blocks = ["0.0.0.0/0"]
   }
+
   tags = {
     name = "http_server_sg"
   }
@@ -45,7 +43,9 @@ resource "aws_instance" "http_server" {
   key_name               = "default-ec2"
   instance_type          = "t2.micro"
   vpc_security_group_ids = [aws_security_group.http_server_sg.id]
-  subnet_id              = "subnet-09936102560fa544c"
+
+  //subnet_id              = "subnet-3f7b2563"
+  subnet_id = data.aws_subnets.default_subnets.ids[0]
 
   connection {
     type        = "ssh"
@@ -58,7 +58,7 @@ resource "aws_instance" "http_server" {
     inline = [
       "sudo yum install httpd -y",
       "sudo service httpd start",
-      "echo Welcome to in28minutes - virtual server is at ${self.public_dns} | sudo tee /var/www/html/index.html"
+      "echo Welcome to in28minutes - Virtual Server is at ${self.public_dns} | sudo tee /var/www/html/index.html"
     ]
   }
 }
