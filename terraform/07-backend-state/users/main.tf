@@ -4,7 +4,7 @@ terraform {
         #key = "07-backend-state-users-dev"
         key = "dev/07-backend-state/users/backend-state"
         region = "us-east-1"
-        dynamodb_table = "kkgdev_application_locks"
+        dynamodb_table = "dev_application_locks"
         encrypt = true
     }
 }
