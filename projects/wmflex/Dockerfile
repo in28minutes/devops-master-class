@@ -1,6 +1,4 @@
 FROM python:2.7.15-alpine
-
-
 RUN apk add --no-cache zlib-dev
 RUN apk add --no-cache linux-headers
 RUN apk add --no-cache gcc python2-dev
@@ -13,9 +11,13 @@ RUN apk del .build-deps
 ENV DISPLAY=:0.0
 # ENV DISPLAY=:0.0
 WORKDIR /app
-COPY . /app
 RUN pip install -r requirements.txt
 EXPOSE 5000
+
+# Copying the main app after port has been expose. This is done to make sure that the top layer
+# get to use cache wheever possible. Most of the code changes would happen in the
+# app code only, hence so.
+COPY . /app
 CMD python ./wingman.py
 
 #COPY requirements.txt /app/requirements.txt
