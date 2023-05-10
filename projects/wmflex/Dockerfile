@@ -16,7 +16,7 @@ EXPOSE 5000
 
 # Copying the main app after port has been expose. This is done to make sure that the top layer
 # get to use cache wheever possible. Most of the code changes would happen in the
-# app code only, hence so
+# app code only, hence adding it here.
 COPY . /app
 CMD python ./wingman.py
 
