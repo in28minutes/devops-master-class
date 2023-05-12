@@ -1,15 +1,21 @@
 version: '3.7'
 services:
+
+  # docker run -d -p 8000:8000 --name=currency-exchange 
+  # --network=currency-network ainebula/currency-exchange:0.0.1.RELEASE
   currency-exchange:
-    image: in28min/currency-exchange:0.0.1-RELEASE
+    image: ainebula/currency-exchange:0.0.1.RELEASE
     ports:
       - "8000:8000"
     restart: always
     networks:
       - currency-compose-network
 
+
+  # docker run -d -p 8100:8100 --env CURRENCY_EXCHANGE_SERVICE_HOST=http://currency-exchange
+  # --name=currency-conversion --network=currency-network ainebula/currency-conversion:0.0.1.RELEASE
   currency-conversion:
-    image: in28min/currency-conversion:0.0.1-RELEASE
+    image: ainebula/currency-conversion:0.0.1.RELEASE
     ports:
       - "8100:8100"
     restart: always

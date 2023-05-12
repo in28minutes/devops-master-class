@@ -65,6 +65,10 @@ The framework will pad and manage the required details on top of module level de
           2. List of all Tabs to create for module.
           3. The order of definition matter here and tabs are seen in same order as defined here
           4. Also note that the test_type to tab name mapping is mentioned in def module_obj_mapper()
+
+# READS :
+# https://towardsdatascience.com/empowering-docker-using-tkinter-gui-bf076d9e4974
+# http://wiki.ros.org/docker/Tutorials/GUI#The_simple_way
 '''
 __author__ = ["Amitabh Suman", "Nischal Martis", "Nikhil Rai", "Rakesh Vats", "Santhosh Prabhu"]
 __copyright__ = "Copyright 2023-24, The Wingman Flex Project"
@@ -103,7 +107,7 @@ import tkMessageBox
 import ttk
 import logging
 import os
-os.environ['DISPLAY'] = ':0.0'
+# os.environ['DISPLAY'] = ':0.0'
 import json
 from functools import partial
 from datetime import datetime
