@@ -21,3 +21,8 @@ Hello World V1 abcde
 ```json
 {"message":"Hello World, in28minutes"}
 ```
+
+# You will see this fail with GITHUB issue : https://github.com/in28minutes/devops-master-class/issues/28
+# To over come this issue, you need to build the JAR file.
+# To build the JAR file : 
+mvn clean install
