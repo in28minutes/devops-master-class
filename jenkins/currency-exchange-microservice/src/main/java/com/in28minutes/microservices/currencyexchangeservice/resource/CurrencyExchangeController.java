@@ -50,7 +50,7 @@ public class CurrencyExchangeController {
 
 	private void printAllHeaders(Map<String, String> headers) {
 		headers.forEach((key, value) -> {
-			LOGGER.info(String.format("Header '%s' = %s", key, value));
+			LOGGER.info("Header '%s' = %s".formatted(key, value));
 		});
 	}
 }
