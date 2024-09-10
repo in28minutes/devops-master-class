@@ -1,5 +1,4 @@
 # Azure DevOps
-
 ## Azure Marketplace
 
 - Terraform 1 (https://marketplace.visualstudio.com/items?itemName=ms-devlabs.custom-terraform-tasks)
