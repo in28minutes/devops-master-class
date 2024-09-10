@@ -1,9 +1,9 @@
 
 package com.in28minutes.microservices.currencyexchangeservice.cucumber;
 
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;
@@ -11,8 +11,7 @@ import io.restassured.http.Method;
 import io.restassured.response.ExtractableResponse;
 import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
-
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 
 import static io.restassured.RestAssured.when;
 
@@ -42,7 +41,7 @@ public class CurrencyExchangeSteps {
 
     @Then("^It should output (.*)$")
     public void thenCheckOutput(float response) {
-       Assert.assertEquals(output, response,0.5);
+       Assertions.assertEquals(output, response,0.5);
 
     }
 

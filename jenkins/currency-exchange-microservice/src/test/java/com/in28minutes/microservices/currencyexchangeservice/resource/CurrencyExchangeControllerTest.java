@@ -5,19 +5,15 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import java.math.BigDecimal;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
 import com.in28minutes.microservices.currencyexchangeservice.util.environment.InstanceInformationService;
 
-
-@RunWith(SpringRunner.class)
 @WebMvcTest(CurrencyExchangeController.class)
 public class CurrencyExchangeControllerTest {
     @Autowired
